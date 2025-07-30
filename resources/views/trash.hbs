@@ -1,0 +1,117 @@
+<div class="mt4">
+    <div>
+      <a href="/news/storedMe">
+      <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+      Quay lại
+      </a>
+      <h3>Người dùng đã bị xóa</h3>
+
+            <table class="table mt-4">
+                    <thead class="thea-dark"></thead>
+                        <tr>
+                            <th scope="col">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="informationIds[]" value="{{this._id}}">
+                                </div>
+                            </th>
+                            <th scope="col">Id</th>
+                            <th scope="col">Họ và tên</th>
+                            <th scope="col">SĐT</th>
+                            <th scope="col">Địa chỉ</th>
+                            <th scope="col">Email</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each information}}
+                        <tr>
+
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="courseIds[]" value="{{this._id}}">
+                            </div>
+                        </td>
+
+                        
+                            <th scope="row">{{sum @index 1}}</th>
+                                <td>{{this.name}}</td>
+                                <td>{{this.phone}}</td>
+                                <td>{{this.address}}</td>
+                                <td>{{this.email}}</td>
+                            <td>
+                                    <a href="" class="btn btn-link btn-restore" data-id="{{this._id}}">Khôi phục</a>
+                                    <a href="" class="btn btn-link" data-toggle="modal" data-id="{{this._id}}" data-target="#delete-course-modal">Xóa vĩnh viễn</a>
+                        </tr>
+                        {{else}}
+                        <tr>
+                        <td colspan="5" class="text-center">
+                            Thùng rác rỗng.
+                            <a href="/news/storedMe">Danh sách người dùng</a>
+                        </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                
+</div>
+
+
+
+<!-- Modal -->
+<div id="delete-course-modal"class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Xóa thông tin?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Hành động này không thể khôi phục. Bạn chắc chắn muốn xóa khóa học ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+        <button id="btn-delete-course" type="button" class="btn btn-danger">Xóa vĩnh viễn</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{{!-- Delete hidden form --}}
+
+<form name="delete-course-form" method="POST"></form>
+<form name="restore-course-form" method="POST"></form>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var courseId;
+        var deleteForm = document.forms['delete-course-form'];
+        var restoreForm = document.forms['restore-course-form'];
+        var btnDeleteCourse = document.getElementById('btn-delete-course');
+        var restoreBtn = $('.btn-restore');
+
+
+      $('#delete-course-modal').on('show.bs.modal', function (event){
+
+           var button = $(event.relatedTarget);
+           courseId = button.data('id');
+      });
+
+      btnDeleteCourse.onclick = function()
+      {
+          deleteForm.action = '/news/' + courseId + '/force?_method=DELETE';
+          deleteForm.submit();
+      }
+
+      restoreBtn.click(function(e) {
+       e.preventDefault();
+      var courseId = $(this).data('id');
+          restoreForm.action = '/news/' + courseId + '/restore?_method=PATCH';
+          restoreForm.submit();
+      })
+    });
+</script>

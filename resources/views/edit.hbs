@@ -1,0 +1,38 @@
+
+    <div class="mt-4">
+    <h3>Sửa thông tin thành viên</h3>
+        <form method="POST" action="/news/{{information._id}}?_method=PUT">
+            <div class="form-group">
+                <label for="name">Tên người dùng</label>
+                <input type="text" class="form-control" value="{{information.name}}" id="name" name="name" placeholder="Nhập tên người dùng">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" value="{{information.email}}" id="email" name="email" placeholder="Nhập email">
+            </div>
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input type="text" class="form-control" value="{{information.password}}" id="password" name="password" placeholder="Nhập mật khẩu">
+            </div>
+            <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="text" class="form-control" value="{{information.phone}}" id="phone" name="phone" placeholder="Nhập số điện thoại">
+            </div>
+            <div class="form-group">
+                <label for="address">Địa chỉ</label>
+                <input type="text" class="form-control" value="{{information.address}}" id="address" name="address" placeholder="Nhập địa chỉ">
+            </div>
+            <div class="form-group">
+                <label for="dateofbirth">Ngày sinh</label>
+                <input type="text" class="form-control" value="{{information.dateofbirth}}" id="dateofbirth" name="dateofbirth" placeholder="Chọn ngày sinh">
+            </div>
+            <label for="gender">Giới tính</label>
+                <select class="form-control" value="{{information.gender}}" id="gender" name="gender">
+                    <option value="" disabled selected>Chọn giới tính</option>
+                    <option value="male">Nam</option>
+                    <option value="female">Nữ</option>
+                </select>
+            <button type="submit" class="btn btn-primary">Lưu lại</button>
+        </form>
+    </div>
+

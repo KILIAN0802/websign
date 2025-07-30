@@ -1,0 +1,60 @@
+<nav class="sidebar-nav" id="sidebar">
+    <div class="sidebar-content">
+        <ul>
+            <li>
+                <a href="/"><button >
+                <i class="fa fa-home" aria-hidden="true"></i>
+            
+                Tổng quan
+                </button>
+                </a>
+            </li>
+            <li>
+                <a href=""><button >
+                <i class="fa fa-user" aria-hidden="true"></i>
+            
+                Tài khoản
+                </button>
+                </a>
+            </li>
+        
+            <li>
+                <a href="/news">
+                    <button>
+                        <i class="fa fa-archive" aria-hidden="true"></i>
+                        Dữ liệu đăng tải
+                    </button>
+                </a>
+            </li>
+        
+            <li>
+                <a href="/news/storedMe"><button >
+                <i class="fa fa-book" aria-hidden="true"></i>
+            
+                Lớp học</button>
+                </a>
+                </li>
+            <li>
+                <a href=""><button >
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+            
+                Đăng xuất
+                </button>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="footer">
+        <div class="update-info">Cập nhật lúc: <span id="update-time"></span></div>
+        <div class="version">v1.0.0.1</div>
+        
+    </div>
+
+    <script>
+        document.getElementById('toggle-sidebar').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('collapsed');
+        });
+    </script>
+</nav>

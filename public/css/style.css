@@ -1,0 +1,154 @@
+.navbar-icons {
+    position: absolute;
+    right: 20px; 
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 30px;
+}
+
+.navbar-icons i {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+.seperator{
+    color: rgb(255, 255, 255);
+    width: .1px;
+    height: 1.5rem;
+    margin: auto;
+}
+
+  
+
+.separator {
+    height: 1px;
+    background-color: #ddd;
+    margin: 30px 0;
+}
+
+.highlight {
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.contact-info {
+    margin-top: 30px;
+    font-style: italic;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button{
+    text-align: left;
+    padding-left: 10px;
+    
+    width: 230px;
+    height: 50px;
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: -45px;
+    outline: none !important; /* Tắt outline */
+}
+button:active{
+    border: none;
+}
+
+button:hover{
+    background-color:#eaeffb ;
+    border: none;
+}
+
+ul{
+    list-style: none;
+}
+
+
+
+
+/* Css manage */
+
+/* Phần nội dung tràn rộng */
+.full-width-content {
+    width: 80%;
+    overflow-y: auto;
+    padding: 20px;
+    padding-right: 250px;
+    background: white; /* Màu nền khác sidebar */
+    margin-left: 18%;
+    max-height: 85vh;
+
+}
+
+
+
+/* news */
+.mt-4 {
+    width: 60%;
+    margin-left: 38.67%;
+   position: relative;
+}
+
+.btn-primary {
+    margin-top: 30px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transform: none;
+    position: sticky ;
+    margin-left: 2px;
+    position: static;
+}
+
+/* Hover state for better interactivity */
+.btn-primary:hover {
+    background-color: #0069d9;
+}
+/* Manage */
+.web-name {
+    color: aliceblue;
+    padding-left: 40%;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.thea-dark{
+    background-color: #f4f5f7;
+}
+
+.table{
+    margin-top: 40px;
+    margin-left: 6rem;
+    width: 200rem;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+
+.btn-primary{
+    margin-bottom: 30px;
+}
+
+.modal-header .close {
+    width: 55px;
+    text-align: center;
+   
+}
